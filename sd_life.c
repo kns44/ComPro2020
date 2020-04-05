@@ -36,14 +36,14 @@ void grade(){
     while(counter!=numof_g){
       printf("\nEnter Credit [%d]: ", i);
       scanf("%f", &credit);
-      printf("Grade Of Subject Number [%d]: ", i);
+      printf("ํYour Grade [%d]: ", i);
       scanf("%f", &subject);
       ans = subject*credit;
       allgit += credit;
       allans += ans;
       counter+=1, i+=1;
     }
-    printf("\nYour Average Grade %.2f\n", allans/allgit);
+    printf("\nYour GPA %.2f\n", allans/allgit);
     select();
 }
 void inex(){
