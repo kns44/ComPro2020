@@ -6,7 +6,6 @@
 
 void delay(int a);
 void bmr_m_f(float a, int gen, float we, float he);
-void bmr_more(int c);
 void main(){
     int i;
     printf("\n\n\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Welcome To Student Life Application \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n\n");
@@ -78,8 +77,9 @@ void grade(){
 void health(){
     system("cls");
     int choice;
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Health Section \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
-    printf("\t\t\t\t\t[1] BMI Calculator\n\t\t\t\t\t[2] BMR Calculator\n\t\t\t\t\t[0] Back To Main Menu");
+    printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Health Section \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\t\t\t\t\t[1] BMI Calculator\n\t\t\t\t\t[2] BMR Calculator\n\t\t\t\t\t[3] ");
+    printf("\n\t\t\t\t\t[4] \n\t\t\t\t\t[0] Back To Main Menu");
     printf("\n\n\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &choice);
     if(choice == 1){
@@ -87,6 +87,12 @@ void health(){
     }
     else if(choice == 2){
         bmr();
+    }
+    else if(choice == 3){
+
+    }
+    else if(choice == 4){
+
     }
     else if(choice == 0){
         system("cls");
@@ -115,9 +121,10 @@ void select(){
 }
 void manager(){
     system("cls");
-    printf("\n\n\t\t\t\t================================\n");
-    printf("\t\t\t\t\tYour Information");
-    printf("\n\t\t\t\t================================\n");
+    printf("\n\n\t\t\t\t\t================================\n");
+    printf("\t\t\t\t\t\tYour Information");
+    printf("\n\t\t\t\t\t================================\n");
+    select();
 }
 void about_me(){
     system("cls");
@@ -136,21 +143,37 @@ void bye(){
             printf(" .");
         }
     printf("\n\n\n\t\t\t\t\tHave A Nice Day!");
+    for(i=0;i<=2;i++)
+        {
+            delay(100000000);
+        }
 }
 void calculator(){
     system("cls");
     int choose1;
     printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Mathematics Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2");
-    printf("\n\n\t\t\t\t\t[1] Modulo Calculator (Remainder Calculator)\n\t\t\t\t\t[2] \n");
-    printf("\t\t\t\t\t[0] Back to Main Menu");
+    printf("\n\n\t\t\t\t\t[1] Modulo Calculator (Remainder Calculator)\n\t\t\t\t\t[2] Weight Unit Converter\n");
+    printf("\t\t\t\t\t[3] Discount Calculator\n\t\t\t\t\t[0] Back to Main Menu");
     printf("\n\n\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &choose1);
     if(choose1 == 1){
         mod_cal();
     }
+    else if(choose1 == 2){
+        weight_con();
+    }
+    else if(choose1 == 3){
+        promotion();
+    }
     else if(choose1 == 0){
         system("cls");
         menu();
+    }
+    else{
+        printf("\n\t\t\t\t\tPlease Enter Number Between 0-2\n\t\t\t\t\t");
+        system("pause");
+        system("cls");
+        select();
     }
 }
 void bmi(){
@@ -174,6 +197,7 @@ void bmi(){
     else if(bmi > 40.0){
         printf("Morbidly Obese ");}
     printf("(%.1f)", bmi);
+    printf("\n\t\t\t\t\tYour range of healthy weight is ");
     select();
 }
 void bmr(){
@@ -208,12 +232,62 @@ void mod_cal(){
     int a,b, ans;
     system("cls");
     printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Modulo Calculator (Find Remainder Of Divide) \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
-    printf("\n\t\t\t\t\tNote : a is (dividend), b is (divisor)\n\n\t\t\t\t\tEnter amount of a : ");
+    printf("\n\t\t\t\t\tNote : a is (dividend), b is (divisor)\n\n\t\t\t\t\tEnter value a : ");
     scanf("%d", &a);
-    printf("n\t\t\t\t\tEnter amount of b : ");
+    printf("n\t\t\t\t\tEnter value b : ");
     scanf("%d", &b);
     ans = a%b;
     printf("\n\t\t\t\t\t\tRemain is %d", ans);
+    select();
+}
+void weight_con(){
+    system("cls");
+    float k_p, p_k, re;
+    int choice;
+    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Weight Unit Converter Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\t\t\t\t\t[1] Kilogram to Pound\n\t\t\t\t\t[2] Pound to Kilogram\n\t\t\t\t\t[0] Main menu");
+    printf("\n\n\t\t\t\t\tEnter number to continue: ");
+    scanf("%d", &choice);
+    if(choice == 1){
+        system("cls");
+        printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Kilograms to Pounds converter \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+        printf("\t\t\t\t\t Please input amount of kilograms : ");
+        scanf("%f", &k_p);
+        printf("\n\t\t\t\t\t Result: %.5f lbs", (k_p*2.20462262));
+        select();
+    }
+    else if(choice == 2){
+        system("cls");
+        printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Kilograms to Pounds converter \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+        printf("\t\t\t\t\t Please input amount of pounds: ");
+        scanf("%f", &p_k);
+        printf("\n\t\t\t\t\t Result: %f kg", (p_k*0.45359237));
+        select();
+    }
+    else if(choice == 0){
+        system("cls");
+        menu();
+    }
+    else{
+        printf("\n\t\t\t\t\tPlease Enter Number Between 1-2\n\t\t\t\t\t");
+        system("pause");
+        system("cls");
+        select();
+    }
+}
+void promotion(){
+    system("cls");
+    float cost, per, dis;
+    int quan;
+    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Discount Calculator Function\xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\t\t\t\t\t1. Enter original price: ");
+    scanf("%f", &cost);
+    printf("\t\t\t\t\t2. Enter discount percentage: ");
+    scanf("%f", &per);
+    printf("\t\t\t\t\t3. Enter quantity: ");
+    scanf("%d", &quan);
+    dis = (cost*quan)-((cost*quan)*per/100);
+    printf("\n\t\t\t\t\tNew price is %.f%", dis);
     select();
 }
 void delay(int a){
