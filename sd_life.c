@@ -98,6 +98,12 @@ void health(){
         system("cls");
         menu();
     }
+    else{
+        printf("\n\t\t\t\t\tPlease Enter Number Between 0-4\n\t\t\t\t\t");
+        system("pause");
+        system("cls");
+        health;
+    }
 }
 void select(){
     int end;
@@ -151,9 +157,9 @@ void bye(){
 void calculator(){
     system("cls");
     int choose1;
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Mathematics Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+    printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Mathematics Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2");
     printf("\n\n\t\t\t\t\t[1] Modulo Calculator (Remainder Calculator)\n\t\t\t\t\t[2] Weight Unit Converter\n");
-    printf("\t\t\t\t\t[3] Discount Calculator\n\t\t\t\t\t[0] Back to Main Menu");
+    printf("\t\t\t\t\t[3] Discount Calculator (Percentage Discount)\n\t\t\t\t\t[4] Prime Number Check\n\t\t\t\t\t[0] Back to Main Menu");
     printf("\n\n\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &choose1);
     if(choose1 == 1){
@@ -165,15 +171,19 @@ void calculator(){
     else if(choose1 == 3){
         promotion();
     }
+    else if(choose1 == 4){
+        system("cls");
+        primenum();
+    }
     else if(choose1 == 0){
         system("cls");
         menu();
     }
     else{
-        printf("\n\t\t\t\t\tPlease Enter Number Between 0-2\n\t\t\t\t\t");
+        printf("\n\t\t\t\t\tPlease Enter Number Between 0-4\n\t\t\t\t\t");
         system("pause");
         system("cls");
-        select();
+        calculator();
     }
 }
 void bmi(){
@@ -269,17 +279,17 @@ void weight_con(){
         menu();
     }
     else{
-        printf("\n\t\t\t\t\tPlease Enter Number Between 1-2\n\t\t\t\t\t");
+        printf("\n\t\t\t\t\tPlease Enter Number Between 0-2\n\t\t\t\t\t");
         system("pause");
         system("cls");
-        select();
+        weight_con();
     }
 }
 void promotion(){
     system("cls");
-    float cost, per, dis;
+    float cost, per, dis, save;
     int quan;
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Discount Calculator Function\xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Discount Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
     printf("\t\t\t\t\t1. Enter original price: ");
     scanf("%f", &cost);
     printf("\t\t\t\t\t2. Enter discount percentage: ");
@@ -287,7 +297,27 @@ void promotion(){
     printf("\t\t\t\t\t3. Enter quantity: ");
     scanf("%d", &quan);
     dis = (cost*quan)-((cost*quan)*per/100);
-    printf("\n\t\t\t\t\tNew price is %.f%", dis);
+    printf("\n\t\t\t\t\tNew price is %.2f%", dis);
+    printf("\n\t\t\t\t\tYou save %.2f", (cost*quan)*per/100);
+    select();
+}
+void primenum(){
+    int prime, i, last;
+    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Prime Number Check Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\n\t\t\t\t\tEnter number to check : ");
+    scanf("%d", &prime);
+    for(i=2;i<=prime/2;i++) {
+        if(prime%i == 0) {
+            last = 1;
+            break;
+        }
+    }
+    if(last == 0){
+        printf("\n\t\t\t\t\tResult : %d is a prime number.", prime);
+    }
+    else{
+        printf("\n\t\t\t\t\tResult : %d is not a prime number.", prime);
+    }
     select();
 }
 void delay(int a){
