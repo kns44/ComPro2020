@@ -302,21 +302,23 @@ void promotion(){
     select();
 }
 void primenum(){
-    int prime, i, last;
+    int prime, i;
     printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Prime Number Check Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
     printf("\n\t\t\t\t\tEnter number to check : ");
     scanf("%d", &prime);
-    for(i=2;i<=prime/2;i++) {
-        if(prime%i == 0) {
-            last = 1;
-            break;
-        }
+    if(prime == 1){
+        printf("\n\t\t\t\t\tResult : %d is not a prime number.", prime);
     }
-    if(last == 0){
-        printf("\n\t\t\t\t\tResult : %d is a prime number.", prime);
+    else if(prime%2 == 0 && prime != 2){
+        printf("\n\t\t\t\t\tResult : %d is not a prime number.", prime);
     }
     else{
-        printf("\n\t\t\t\t\tResult : %d is not a prime number.", prime);
+        for(i=3;i<prime/2;i++){
+            if(prime%i == 0){
+                printf("\n\t\t\t\t\tResult : %d is not a prime number.", prime);
+            }
+        }
+        printf("\n\t\t\t\t\tResult : %d is a prime number.", prime);
     }
     select();
 }
