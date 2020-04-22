@@ -19,8 +19,7 @@ int menu(){
     int choose, i;
     printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Student Life Application \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n");
     printf("\n\t\t\t\t\t[1] Grade Calculator\n\t\t\t\t\t[2] Health\n\t\t\t\t\t[3] Mathematics Calculator");
-    printf("\n\t\t\t\t\t[4] Manage Your Infomation\n");
-    printf("\t\t\t\t\t[5] About Us\n\t\t\t\t\t[0] Exit");
+    printf("\n\t\t\t\t\t[4] About Us\n\t\t\t\t\t[0] Exit");
     printf("\n\n\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &choose);
     if(choose == 1){
@@ -37,17 +36,13 @@ int menu(){
         calculator();
     }
     else if(choose == 4){
-        animation();
-        manager();
-    }
-    else if(choose == 5){
         about_me();
     }
     else if(choose == 0){
         bye();
     }
     else{
-        printf("\n\t\t\t\t\t## Please Enter Number Between 0-5 ##\n\n\t\t\t\t\t");
+        printf("\n\t\t\t\t\t## Please Enter Number Between 0-4 ##\n\n\t\t\t\t\t");
         system("pause");
         system("cls");
         menu();
@@ -124,13 +119,6 @@ void select(){
         system("cls");
         select();
     }
-}
-void manager(){
-    system("cls");
-    printf("\n\n\t\t\t\t\t================================\n");
-    printf("\t\t\t\t\t\tYour Information");
-    printf("\n\t\t\t\t\t================================\n");
-    select();
 }
 void about_me(){
     system("cls");
