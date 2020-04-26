@@ -73,8 +73,8 @@ void health(){
     system("cls");
     int choice;
     printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Health Section \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
-    printf("\t\t\t\t\t[1] BMI Calculator\n\t\t\t\t\t[2] BMR Calculator\n\t\t\t\t\t[3] ");
-    printf("\n\t\t\t\t\t[4] \n\t\t\t\t\t[0] Back To Main Menu");
+    printf("\t\t\t\t\t[1] BMI Calculator\n\t\t\t\t\t[2] BMR Calculator");
+    printf("\n\t\t\t\t\t[0] Back To Main Menu");
     printf("\n\n\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &choice);
     if(choice == 1){
@@ -82,12 +82,6 @@ void health(){
     }
     else if(choice == 2){
         bmr();
-    }
-    else if(choice == 3){
-
-    }
-    else if(choice == 4){
-
     }
     else if(choice == 0){
         system("cls");
@@ -217,14 +211,23 @@ void bmr(){
 }
 void bmr_m_f(float a, int gen, float we, float he){
     float bmr_ans;
+    system("cls");
+    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 BMR (Basal Metabolic Rate) Calculator \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n");
     if(gen == 1){
         bmr_ans = 66+(13.7*we)+(5*he)-(6.8*a);
-        printf("\n\t\t\t\t\tYour Estimate BMR is %.f Calories/Day", bmr_ans);
+        printf("\n\t\t\t\t\tResult : Your estimate BMR is %.f calories/day\n", bmr_ans);
     }
     else if(gen == 2){
         bmr_ans = 655+(9.6*we)+(1.8*he)-(4.7*a);
-        printf("\n\t\t\t\t\t Your Estimate BMR is %.f Calories/Day", bmr_ans);
+        printf("\n\t\t\t\t\tResult : Your estimate BMR is %.f calories/day\n", bmr_ans);
     }
+    printf("\n\t\t\t\t    Estimate BMR based on actitvity\n");
+    printf("\n\t\t\t\t\t1. Little or no exercise : %.f calories/day", bmr_ans*1.2);
+    printf("\n\t\t\t\t\t2. Light exercise or sports (1-3 days/week) : %.f calories/day", bmr_ans*1.375);
+    printf("\n\t\t\t\t\t3. Moderate exercise or sports 6-7 days/week : %.f calories/day", bmr_ans*1.55);
+    printf("\n\t\t\t\t\t4. Hard exercise every day : %.f calories/day", bmr_ans*1.725);
+    printf("\n\t\t\t\t\t5. Hard exercise 2 or more times per day : %.f calories/day", bmr_ans*1.9);
+    select();
 }
 void mod_cal(){
     int a,b, ans;
