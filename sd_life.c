@@ -189,7 +189,6 @@ void bmi(){
     else if(bmi > 40.0){
         printf("Morbidly Obese ");}
     printf("(%.1f)", bmi);
-    printf("\n\t\t\t\t\tYour range of healthy weight is ");
     select();
 }
 void bmr(){
