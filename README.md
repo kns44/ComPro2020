@@ -1,5 +1,4 @@
-******************************
-   Student Life application
+# Student Life application
   
   -----วิดีโอสาธิตการใช้งาน-----
   
