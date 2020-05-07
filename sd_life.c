@@ -49,6 +49,7 @@ int menu(){
     }
 }
 void grade(){
+    int still;
     char all[50];
     float subject, credit, ans, allgit, allans, last;
     int numof_g, counter = 0, i = 1;
@@ -56,9 +57,9 @@ void grade(){
     printf("\n\t\t\t\t\t Enter Number of Subject: ");
     scanf("%d", &numof_g);
     while(counter!=numof_g){
-      printf("\n\t\t\t\t%d. Enter Credit Of Subject Number [%d]: ", i, i);
+      printf("\n\t\t\t\t\t%d. Enter Credit Of Subject Number [%d]: ", i, i);
       scanf("%f", &credit);
-      printf("\t\t\t\t   Enter Grade Of Subject Number [%d]: ", i);
+      printf("\t\t\t\t\t   Enter Grade Of Subject Number [%d]: ", i);
       scanf("%f", &subject);
       ans = subject*credit;
       allgit += credit;
@@ -68,6 +69,7 @@ void grade(){
     last = allans/allgit;
     printf("\n\t\t\t\t\tYour GPA is %.2f", last);
     select();
+    return 0;
 }
 void health(){
     system("cls");
@@ -96,9 +98,9 @@ void health(){
 }
 void select(){
     int end;
-    printf("\n\n\n\t\t\t\t\tWhat Would You Like To Next?\n");
-    printf("\n\t\t\t\t\t[1] Back To Main Menu\n\t\t\t\t\t[2] Exit\n");
-    printf("\n\t\t\t\t\tEnter Number To Continue: ");
+    printf("\n\n\t\t\t\t\tWhat Would You Like To Next?\n");
+    printf("\t\t\t\t\t    [1] Back To Main Menu\n\t\t\t\t\t    [2] Exit\n");
+    printf("\t\t\t\t\tEnter Number To Continue: ");
     scanf("%d", &end);
     if(end == 1){
         system("cls");
@@ -135,6 +137,7 @@ void bye(){
         {
             delay(100000000);
         }
+    return 0;
 }
 void calculator(){
     system("cls");
@@ -212,13 +215,14 @@ void bmr_m_f(float a, int gen, float we, float he){
     float bmr_ans;
     system("cls");
     printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 BMR (Basal Metabolic Rate) Calculator \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n");
+    printf("\n\t\t\t\tNote: BMR is the number of calories your body needs or \n\t\t\t\t      also known as your body's metabolism\n");
     if(gen == 1){
         bmr_ans = 66+(13.7*we)+(5*he)-(6.8*a);
-        printf("\n\t\t\t\t\tResult : Your estimate BMR is %.f calories/day\n", bmr_ans);
+        printf("\n\t\t\t\t    Result : Your estimate BMR is %.f calories/day\n", bmr_ans);
     }
     else if(gen == 2){
         bmr_ans = 655+(9.6*we)+(1.8*he)-(4.7*a);
-        printf("\n\t\t\t\t\tResult : Your estimate BMR is %.f calories/day\n", bmr_ans);
+        printf("\n\t\t\t\t\t    Result : Your estimate BMR is %.f calories/day\n", bmr_ans);
     }
     printf("\n\t\t\t\t    Estimate BMR based on actitvity\n");
     printf("\n\t\t\t\t\t1. Little or no exercise : %.f calories/day", bmr_ans*1.2);
@@ -229,15 +233,15 @@ void bmr_m_f(float a, int gen, float we, float he){
     select();
 }
 void mod_cal(){
-    int a,b, ans;
+    int a,b, ans, still;
     system("cls");
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Modulo Calculator (Find Remainder Of Divide) \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
-    printf("\n\t\t\t\t\tNote : a is (dividend), b is (divisor)\n\n\t\t\t\t\tEnter value a : ");
+    printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Modulo Calculator (Find Remainder Of Divide) \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\t\t\t\t   Note : a is (dividend), b is (divisor)\n\n\t\t\t\t\tEnter value a : ");
     scanf("%d", &a);
-    printf("n\t\t\t\t\tEnter value b : ");
+    printf("\t\t\t\t\tEnter value b : ");
     scanf("%d", &b);
     ans = a%b;
-    printf("\n\t\t\t\t\t\tRemain is %d", ans);
+    printf("\n\t\t\t\t\tRemain is %d", ans);
     select();
 }
 void weight_con(){
@@ -279,7 +283,7 @@ void promotion(){
     system("cls");
     float cost, per, dis, save;
     int quan;
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Discount Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Discount Calculator Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
     printf("\t\t\t\t\t1. Enter original price: ");
     scanf("%f", &cost);
     printf("\t\t\t\t\t2. Enter discount percentage: ");
@@ -293,7 +297,7 @@ void promotion(){
 }
 void primenum(){
     int prime, i;
-    printf("\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Prime Number Check Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
+    printf("\n\n\n\t\t\t\t\xB2\xB2\xB2\xB2\xB2\xB2\xB2 Prime Number Check Function \xB2\xB2\xB2\xB2\xB2\xB2\xB2\n\n");
     printf("\n\t\t\t\t\tEnter number to check : ");
     scanf("%d", &prime);
     if(prime == 1){
